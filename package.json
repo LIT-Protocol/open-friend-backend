@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "node index.js",
     "startDev": "nodemon index.js"
@@ -12,8 +13,13 @@
     "fastify": "^3.22.0",
     "fastify-cors": "^6.0.2",
     "fastify-objectionjs": "^0.4.0",
-    "fastify-postgres": "^3.6.0",
     "knex": "^0.95.11",
     "objection": "^2.2.17"
+  },
+  "devDependencies": {
+    "@bugsnag/js": "^7.16.1",
+    "fastify-cookie": "^5.6.0",
+    "fastify-postgres": "^3.6.0",
+    "nodemon": "^2.0.15"
   }
 }
