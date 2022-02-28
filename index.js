@@ -4,11 +4,11 @@ import fastifyCors from "fastify-cors";
 import fastifyObjectionJS from "fastify-objectionjs";
 
 import fastifyCookie from "fastify-cookie";
-import { connectDiscordBot } from "./discordBot.js";
-import knexConfig from "./knexfile.js";
+//import { connectDiscordBot } from "./discordBot.js";
+//import knexConfig from "./knexfile.js";
 
-import TokenHolding from "./models/TokenHolding.js";
-import User from "./models/User.js";
+//import TokenHolding from "./models/TokenHolding.js";
+//import User from "./models/User.js";
 
 import Bugsnag from "@bugsnag/js";
 
@@ -21,7 +21,7 @@ Bugsnag.start({
 
 const fastify = Fastify();
 
-connectDiscordBot(fastify);
+//connectDiscordBot(fastify);
 
 const dbConfig = {
   connectionString: process.env.LIT_OPEN_FRIEND_BACKEND_DB_URL,
@@ -41,10 +41,10 @@ if (USING_HTTPS) {
 
 fastify.register(fastifyPostgres, dbConfig);
 
-fastify.register(fastifyObjectionJS, {
-  knexConfig: knexConfig[process.env.NODE_ENV || "development"],
-  models: [TokenHolding, User],
-});
+//fastify.register(fastifyObjectionJS, {
+//  knexConfig: knexConfig[process.env.NODE_ENV || "development"],
+//  models: [TokenHolding, User],
+//});
 
 fastify.register(fastifyCors, {
   origin: "*",
